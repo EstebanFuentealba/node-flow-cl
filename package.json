@@ -1,0 +1,23 @@
+{
+  "name": "node-flow-cl",
+  "version": "0.0.1",
+  "description": "NodeJS package para la integración de pagos con Flow (https://www.flow.cl)",
+  "main": "./kpf/flowApi.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EstebanFuentealba/node-flow-cl.git"
+  },
+  "author": "Esteban Fuentealba",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/EstebanFuentealba/node-flow-cl/issues"
+  },
+  "homepage": "https://github.com/EstebanFuentealba/node-flow-cl#readme",
+  "dependencies": {
+    "crypto": "0.0.3",
+    "locutus": "^2.0.8"
+  }
+}
