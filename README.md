@@ -1,7 +1,12 @@
 # node-flow-cl
 NodeJS package para la integración de pagos con Flow (https://www.flow.cl)
 
-# usage
+# Install
+```
+npm install node-flow-cl --save
+```
+
+# Usage
 
 ```javascript
 const Flow = require("node-flow-cl");
@@ -11,7 +16,7 @@ var flowAPI = new Flow({
     "FLOW_URL_CONFIRMACION": "http://www.comercio.cl/kpf/confirma.php",
     "FLOW_URL_RETORNO": "http://www.comercio.cl",
     "FLOW_URL_PAGO": "http://flow.tuxpan.com/app/kpf/pago.php",
-    "FLOW_KEY": "/keys",
+    "FLOW_KEY": "/keys/comercio.pem",
     "FLOW_LOGPATH": "/logs",
     "FLOW_COMERCIO": "emailFlow@comercio.com",
     "FLOW_MEDIOPAGO": "9",
