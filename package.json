@@ -1,6 +1,6 @@
 {
   "name": "node-flow-cl",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "NodeJS package para la integración de pagos con Flow (https://www.flow.cl)",
   "main": "./kpf/flowApi.js",
   "scripts": {

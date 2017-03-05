@@ -19,8 +19,8 @@ class flowAPI {
         this.config = Object.assign({}, defaults, options );
     }
     flow_pack() {
-		var tipo_integracion = encodeURIComponent(config.FLOW_TIPO_INTEGRACION);
-		var comercio = encodeURIComponent(config.FLOW_COMERCIO);
+		var tipo_integracion = encodeURIComponent(this.config.FLOW_TIPO_INTEGRACION);
+		var comercio = encodeURIComponent(this.config.FLOW_COMERCIO);
 		var orden_compra = encodeURIComponent(this.order.OrdenNumero);
 		var monto = encodeURIComponent(this.order.Monto);
 		var medioPago = encodeURIComponent(this.order.MedioPago);
@@ -32,10 +32,10 @@ class flowAPI {
         if (!hConcepto) hConcepto = `Orden de Compra ${orden_compra}`;
 		var concepto = encodeURIComponent(hConcepto);
 		
-		var url_exito = encodeURIComponent(config.FLOW_URL_EXITO);
-		var url_fracaso = encodeURIComponent(config.FLOW_URL_FRACASO);
-		var url_confirmacion = encodeURIComponent(config.FLOW_URL_CONFIRMACION);
-		var url_retorno = encodeURIComponent(config.FLOW_URL_RETORNO);
+		var url_exito = encodeURIComponent(this.config.FLOW_URL_EXITO);
+		var url_fracaso = encodeURIComponent(this.config.FLOW_URL_FRACASO);
+		var url_confirmacion = encodeURIComponent(this.config.FLOW_URL_CONFIRMACION);
+		var url_retorno = encodeURIComponent(this.config.FLOW_URL_RETORNO);
 
 
         var p = `c=${comercio}&oc=${orden_compra}&mp=${medioPago}&m=${monto}&o=${concepto}&ue=${url_exito}&uf=${url_fracaso}&uc=${url_confirmacion}&ti=${tipo_integracion}&e=${email}&v=kit_1_4&ur=${url_retorno}`;
@@ -45,13 +45,13 @@ class flowAPI {
 
     }
     flow_sign(data) {
-        var privateKey = fs.readFileSync(`${config.FLOW_KEY}`,"utf8");
+        var privateKey = fs.readFileSync(`${this.config.FLOW_KEY}`,"utf8");
         var signature = encodeURIComponent(crypto.createSign('sha256').update(data).sign(privateKey,"base64"));   
 		return signature;
 	}
     new_order(orden_compra, monto,  concepto, email_pagador, medioPago = "Non") {
 		if(medioPago == "Non") {
-			medioPago = config.FLOW_MEDIOPAGO;
+			medioPago = this.config.FLOW_MEDIOPAGO;
 		}
 		this.order.OrdenNumero = orden_compra;
 		this.order.Concepto = concepto;
