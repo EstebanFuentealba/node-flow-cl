@@ -17,6 +17,17 @@ class flowAPI {
             "FLOW_TIPO_INTEGRACION": "f"
         };
         this.config = Object.assign({}, defaults, options );
+        this.order = {
+            "OrdenNumero": "",
+            "Concepto": "",
+            "Monto": "",
+            "MedioPago": this.config.FLOW_MEDIOPAGO,
+            "FlowNumero": "",
+            "Pagador": "",
+            "Status": "",
+            "Error": ""
+        };
+        
     }
     flow_pack() {
 		var tipo_integracion = encodeURIComponent(this.config.FLOW_TIPO_INTEGRACION);

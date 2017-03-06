@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/EstebanFuentealba/node-flow-cl#readme",
   "dependencies": {
-    "crypto": "0.0.3",
+    "crypto": "0.0.4",
     "locutus": "^2.0.8"
   }
 }
